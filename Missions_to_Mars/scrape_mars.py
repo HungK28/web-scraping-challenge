@@ -34,4 +34,15 @@ def scrape():
     
     mars_collection["Feautred_image"] = "https://spaceimages-mars.com/image/featured/mars1.jpg" + pictures[2]
 
+    facts_url = 'https://galaxyfacts-mars.com/'
+    facts_df = pd.read_html(facts_url)[0]
+    facts_df.columns = ["Facts", "Values"]
+    facts_index_df = facts_df.set_index(["Facts"])
+    facts_html = fact_df.to_html()
+    facts_html =facts_html.replace("\n", "")
+    mars_collection["Facts"] = facts_html
+
+    
+    
+
 
